@@ -1,0 +1,23 @@
+ALGORITHM insertion_sort
+// Cette implémentation utilise deux compteurs, i et j, où i représente l'élément courant à insérer, et j est utilisé pour parcourir la séquence triée et trouver la position correcte pour l'élément courant. Les éléments supérieurs à l'élément courant sont décalés d'une position vers la droite jusqu'à ce que la position correcte soit trouvée et que l'élément courant soit inséré à sa place.
+VAR
+arr : ARRAY_OF type[INTEGER];
+i, j, card: INTEGER
+
+BEGIN
+FOR i FROM 1 TO length(arr) step 1  DO
+    card = arr[i] // Select the current element to be compared
+    j = i - 1
+
+WHILE (j >= 0 and card < arr[j]) DO  // Move elements of arr[0..i-1] that are greater than key
+    arr[j+1]= arr[j]  //  To one position ahead of their current position
+    j- = 1 //j decreases from i down to 0 ; re-initialisation 
+    arr[j+1] // card coorect position ?
+END_WHILE
+
+END_FOR
+    arr = [12, 11, 13, 5, 6]
+    insertion_sort(arr)
+    Write("Sorted array:" arr)
+END
+
